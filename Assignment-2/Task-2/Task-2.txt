@@ -1,0 +1,49 @@
+1.Introduction:
+Welcome to the Nudge Creation API, which allows users to create nudges for their events. The API can be accessed via the following base URL: https://example.com/nudge-creation. All requests to the API must be authenticated using an API key, which can be obtained by registering for an account on our website.
+
+2.Endpoints:For APIs, an endpoint can include a URL of a server or service. Each endpoint is the location from which APIs can access the resources they need to carry out their function.
+
+APIs work using ‘requests’ and ‘responses.’ When an API requests information from a web application or web server, it will receive a response. The place that APIs send requests and where the resource lives, is called an endpoint.
+
+POST /nudge-creation - Create a new nudge for an event
+PUT /nudge-creation/:nudgeId - Update an existing nudge
+GET /nudge-creation/:nudgeId - Get details for a specific nudge
+GET /nudge-creation - Get a list of all nudges created by the user
+
+3.Payload:A payload in API is the actual data pack that is sent with the GET method in HTTP. It is the crucial information that you submit to the server when you are making an API request. The payload can be sent or received in various formats, including JSON. Usually, the payload is denoted using the “{}” in a query string.
+Method: POST
+URL: https://example.com/nudge-creation
+Body:
+{
+"eventTag": "Conference2023",
+"nudgeTitle": "Join our conference",
+"nudgeImage": "<base64-encoded-image-data>",
+"sendTime": "2023-06-01T09:00:00Z",
+"nudgeDescription": "Don't miss out on this amazing conference!",
+"nudgeIcon": "<base64-encoded-image-data>",
+"nudgeInvitation": "Join us for an unforgettable event"
+},{
+timestamps: true,
+}
+
+4.Response Format:
+HTTP Status Code: 201 Created
+Data Format: JSON
+
+Body:
+{
+"nudgeId": "abcd1234",
+"eventTag": "Conference2023",
+"nudgeTitle": "Join our conference",
+"nudgeImageURL": "https://example.com/images/nudgeImage.jpg",
+"sendTime": "2023-06-01T09:00:00Z",
+"nudgeDescription": "Don't miss out on this amazing conference!",
+"nudgeIconURL": "https://example.com/images/nudgeIcon.jpg",
+"nudgeInvitation": "Join us for an unforgettable event",
+"createdAt": "2023-04-30T11:14:57.707Z",
+ "updatedAt": "2023-04-30T11:24:56.919Z",
+}
+
+
+5.Error Handling:
+The error handling section should define the error codes that the API may return and their meanings. Examples of error responses for each endpoint should also be provided. Here's an example of what the error handling section could look like:
